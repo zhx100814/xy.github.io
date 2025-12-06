@@ -1,0 +1,54 @@
+<超文本标记语言 朗="zh-CN">
+
+<头>
+  <元 内容="width=设备宽度，初始比例=1.0，最大比例=1.0，用户可缩放=0" 姓名="视口">
+  <元 内容="是" 姓名="apple-mobile-web-app-capable">
+  <元 内容="是" 姓名="苹果触摸全屏">
+  <元 内容="黑色" 姓名="apple-mobile-web-app-status-bar-style">
+  <元 内容="320" 姓名="MobileOptimized">
+  <标题></标题>
+  <风格>
+.内容 {
+高度: 100%;
+宽度: 100%;
+位置: 确定的;
+左: 0;
+顶端: 0;
+}
+  </风格>
+</头>
+
+<身体>
+  <脚本>
+var urlParams=新的URLSearchParams(窗户.位置.搜索)；
+var encodedParam=urlParams.得到('C')；
+var tureurl=atob(encodedParam)；
+如果(tureurl.包括("http"){
+var超文本标记语言='<iframe 班级="内容"src='+tureurl+'></iframe>';
+文件.writeln(超文本标记语言)；
+控制台.日志(tureurl)；
+} 其他 {
+控制台.日志("滋养");
+}
+  </脚本>
+  <脚本>
+var火狐浏览器=领航员.UserAgent.indexOf('Firefox')！=-1；
+
+功能鼠标轮(e，医生){
+e.preventDefault&&e.preventDefault()，e.returnValue=假的；
+var向上=火狐浏览器&&e.细节<0||e.wheelDelta>0；
+医生.身体.scrollTop=医生.documentElement.scrollTop+=向上？-50:50；
+}
+
+功能bindMouseWhee(IFR){
+尝试 {
+var医生=IFR.contentWindow.文件；
+火狐浏览器？医生.addEventListener('DOMMouseScroll'，功能(e){鼠标轮(e，医生)}，假的)：(医生.onmousewheel=功能(e){鼠标轮(e||IFR.contentWindow.事件，医生)})；
+}赶上(e){
+警惕的('跨域无法获取iframe加载文件'+e)；
+}
+}
+  </脚本>
+</身体>
+
+</超文本标记语言>
